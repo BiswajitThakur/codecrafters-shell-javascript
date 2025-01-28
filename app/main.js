@@ -5,16 +5,13 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.question("$ ", (answer) => {
-  execute_cmd(answer);
-  rl.close();
-});
+process.stdout.write("$ ");
 
-/*
 rl.on("line", (line) => {
   execute_cmd(line);
+  process.stdout.write("$ ");
 });
-*/
+
 function execute_cmd(cmd) {
   console.log(`${cmd}: command not found`);
 }
