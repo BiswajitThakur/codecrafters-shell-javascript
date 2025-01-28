@@ -1,4 +1,4 @@
-const readline = require("readline");
+const readline = require("node:readline");
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -6,5 +6,15 @@ const rl = readline.createInterface({
 });
 
 rl.question("$ ", (answer) => {
+  execute_cmd(answer);
   rl.close();
 });
+
+/*
+rl.on("line", (line) => {
+  execute_cmd(line);
+});
+*/
+function execute_cmd(cmd) {
+  console.log(`${cmd}: command not found`);
+}
